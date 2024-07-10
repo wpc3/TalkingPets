@@ -8,7 +8,7 @@ public class BunnyTest {
     public void testBunnySpeak() {
 
         //Given
-        Bunny bunny = new Bunny("Bugs");
+        Pet bunny = new Bunny("Bugs");
 
         //When
         String talkingPets = bunny.speak();
@@ -21,7 +21,7 @@ public class BunnyTest {
     public void testBunnyGetName() {
         //Given
         String expectedName = "Bunny";
-        Bunny bunny = new Bunny(expectedName);
+        Pet bunny = new Bunny(expectedName);
 
         //Then
         String actualName = bunny.getName();
@@ -33,7 +33,7 @@ public class BunnyTest {
     @Test
     public void testBunnySetName() {
         //Given
-        Bunny bunny = new Bunny("Roger");
+        Pet bunny = new Bunny("Roger");
         String newName = "Mike";
 
         //Then
@@ -41,6 +41,14 @@ public class BunnyTest {
 
         //When
         Assert.assertEquals(newName, bunny.getName());
+
+    }
+
+    @Test
+    public void testBunnyIsPet(){
+       String name = "Bun";
+       Bunny bunny = new Bunny((name));
+       Assert.assertTrue(bunny instanceof Bunny);
 
     }
 

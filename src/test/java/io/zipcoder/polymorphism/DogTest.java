@@ -8,7 +8,7 @@ public class DogTest {
     public void testDogSpeak() {
 
         //Given
-        Dog dog = new Dog("Bugs");
+        Pet dog = new Pet("Bugs");
 
         //When
         String talkingPets = dog.speak();
@@ -21,7 +21,7 @@ public class DogTest {
     public void testDogGetName() {
         //Given
         String expectedName = "Bunny";
-        Dog dog = new Dog(expectedName);
+        Pet dog = new Pet(expectedName);
 
         //Then
         String actualName = dog.getName();
@@ -33,15 +33,27 @@ public class DogTest {
     @Test
     public void testDogSetName() {
         //Given
-        Dog dog = new Dog("Roger");
+        Pet dog = new Pet("Roger");
         String newName = "Frog";
 
-        //Then
+        //When
         dog.setName(newName);
 
-        //When
+        //Then
         Assert.assertEquals(newName, dog.getName());
 
 
+    }
+
+    @Test
+    public void testCatIsAPet(){
+        //Given
+        String name = "Carm";
+
+        //When
+        Dog dog = new Dog((name));
+
+        //Then
+        Assert.assertTrue(dog instanceof Dog);
     }
 }
